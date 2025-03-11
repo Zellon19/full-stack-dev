@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestamos</title>
-    <link rel="stylesheet" href="./style/common.css">
+    <link rel="stylesheet" href="./style/index.css">
 </head>
 
 <body>
     <header>
-        <nav class="main-nav">
-            <a href="./index.html" id="library-link"> Biblioteca </a>
-            <a href="./books.html"> Libros </a>
-            <a href="./users.html"> Usuarios </a>
-            <a href="./borrowed.html" class="active"> Prestamos </a>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li> <a href="./index.html" id="library-link"> Biblioteca </a></li>
+                <li> <a href="./books.html"> Libros </a></li>
+                <li> <a href="./users.html"> Usuarios </a> </li>
+                <li> <a href="./borrowed.html" class="active"> Prestamos </a> </li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <table>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+            <thead>
+                <th>
+                    <tr scope="col">Id Prestamo</tr>
+                    <tr scope="col">Id Libro</tr>
+                    <tr scope="col">Id Usuario</tr>
+                    <tr scope="col">Fecha Prestamo</tr>
+                    <tr scope="col">Fecha Devolucion</tr>
+                </th>
+            </thead>
         </table>
     </main>
 </body>
