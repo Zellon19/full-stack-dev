@@ -1,6 +1,11 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Minecraft';
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url("../assets/Fonts/Minecraft.ttf");
 }
 
 .navbar {
