@@ -5,7 +5,7 @@ $libroModel = new Libro($pdo); // Instancia del modelo
 
 function obtenerLibros() {
     global $libroModel; //Global hace referencia la ámbito global, se refiere a que los objetos son accesibles en cualquier parte del código incluyendo cualquier función o clase.
-    echo json_encode($libroModel->obtenerTodos());
+    echo json_encode($libroModel->obtenerTodos()); //echo = imprimir 
 }
 
 function agregarLibro($titulo, $autor, $anio_publicacion) {
