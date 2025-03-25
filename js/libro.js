@@ -13,6 +13,12 @@ function obtenerLibros() {
 function mostrarLibros(libros) {
     let contenido="";
     libros.forEach(libro=>{
-        contenido +='<h4>${libro.titulo'}</h4>;
+        contenido +='<h4>${'libro.titulo'}</h4>';
+        contenido +='<h4>${'libro.ID'}</h4>';
+        contenido +='<h4>${'libro.Titulo'}</h4>';
+        contenido +='<h4>${'libro.Autor'}</h4>';
+        contenido +='<h4>${'libro.Publicacion'}</h4>';
+        contenido +='<h4>${'libro.Disponible'}</h4>';
     });
-
+}
+    obtenerLibros();
