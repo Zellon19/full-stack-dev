@@ -20,5 +20,5 @@ function mostrarLibros(libros) {
         contenido +='<h4>${libro.Publicacion}</h4>';
         contenido +='<h4>${libro.Disponible}</h4>';
     });
-}
+}return contenido;
     obtenerLibros();
