@@ -14,7 +14,7 @@ class Libro {
     // Método para obtener todos los libros de la base de datos
     public function obtenerTodos() {
         // Prepara la consulta SQL para seleccionar todos los registros de la tabla 'libros'
-        $stmt = $this->pdo->prepare("SELECT * FROM libros");
+        $stmt = $this->pdo->prepare("SELECT * FROM libro");
         
         // Ejecuta la consulta
         $stmt->execute();
@@ -26,7 +26,7 @@ class Libro {
     // Método para agregar un nuevo libro a la base de datos
     public function agregar($titulo, $autor, $anio_publicacion) {
         // Prepara la consulta SQL para insertar un nuevo registro en la tabla 'libros'
-        $stmt = $this->pdo->prepare("INSERT INTO libros (titulo, autor, anio_publicacion) VALUES (:titulo, :autor, :anio)");
+        $stmt = $this->pdo->prepare("INSERT INTO libro (titulo, autor, anio_publicacion) VALUES (:titulo, :autor, :anio)");
         
         // Ejecuta la consulta con los parámetros proporcionados en la llamada al método
         // Los valores del libro se pasan en un array asociativo
