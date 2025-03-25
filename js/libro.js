@@ -10,3 +10,9 @@ function obtenerLibros() {
     }   
 
 }
+function mostrarLibros(libros) {
+    let contenido="";
+    libros.forEach(libro=>{
+        contenido +='<h4>${libro.titulo'}</h4>;
+    });
+
