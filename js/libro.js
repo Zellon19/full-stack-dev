@@ -7,7 +7,6 @@ function obtenerLibros() {
         contenedor.innerHTML=mostrarLibros(libros);   
     }catch(error){
         console.error("Error al obtener libros" + error);
-    }
-    )   
+    }   
 
 }
