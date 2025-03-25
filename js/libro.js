@@ -1,24 +1,31 @@
 async function obtenerLibros() {
 
     try {
-        const respuesta = await respuesta.json fetch ("../backend/routes/api.php");
-        const libros=respuesta.json();
-        const contenedor=document.getElementById("contenedor-libros");
-        contenedor.innerHTML=mostrarLibros(libros);   
+        const respuesta = await fetch ("../full-stack-dev/backend/routes/api.php");
+        const libros= await respuesta.json();
+        mostrarLibros(libros);
     }catch(error){
         console.error("Error al obtener libros" + error);
     }   
-
 }
+
 function mostrarLibros(libros) {
     let contenido="";
-    libros.array.forEach(libro => {
-        contenido +='<h4>${libro.id libro}</h4>'
-        contenido +='<h4>${libro.ID}</h4>';
-        contenido +='<h4>${libro.Titulo}</h4>';
-        contenido +='<h4>${libro.Autor}</h4>';
-        contenido +='<h4>${libro.Publicacion}</h4>';
-        contenido +='<h4>${libro.Disponible}</h4>';
+    libros.forEach(libro => {
+        let availabel = libro.disponible === 1 ? "Si" : "No";
+        contenido += "<tr>"
+        contenido += "<td>" + libro.id_libro + "</td>";
+        contenido += "<td>" + libro.titulo + "</td>";
+        contenido += "<td>" + libro.autor + "</td>";
+        contenido += "<td>" + libro.anio_publicacion + "</td>";
+        contenido += "<td>" + availabel + "</td>";
+        contenido += "</tr>"
+        console.log(libro);
     });
-}return contenido;
-    obtenerLibros();
+
+    const table = document.getElementById("body-table");
+    table.innerHTML = contenido;
+
+}
+
+obtenerLibros();
