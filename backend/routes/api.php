@@ -1,17 +1,20 @@
 <?php
 require "../controllers/libros.php"; // Importar el controlador que maneja la lógica de negocio
 require "../controllers/usuarios.php";
+require "../controllers/prestamos.php";
 
-// Obtener el método de la solicitud HTTP (GET, POST, etc.)
+// Obtenemos el nombre del json que queremos mostrar de la url
 $solicitud = $_GET["url"];
 
-// Si la solicitud es de tipo GET, se llama a la función obtenerLibros()
 switch($solicitud){
     case "libros":
         obtenerLibros();
         break;
     case "usuarios":
         obtenerUsuarios();
+        break;
+    case "prestamos":
+        obtenerPrestamos();
         break;
     default:
         echo json_encode(["error" => "Método no permitido"]);
