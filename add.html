@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios | Biblioteca</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/table.css">
+    <script src="./js/usuario.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li> <a href="./index.html" id="library-link"> Biblioteca </a></li>
+                <li> <a href="./books.html"> Libros </a></li>
+                <li> <a href="./users.html" class="active"> Usuarios </a> </li>
+                <li> <a href="./borrowed.html"> Prestamos </a> </li>
+                <li> <a href="./add.html"> Agregar </a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--FORMULARIO LIBRO-->
+        <form action="" method="post" class="form-book">
+            <div class="form">
+              <label for="name">Nombre de Libro: </label>
+              <input type="text" name="libro" id="libro" required />
+            </div>
+            <div class="form-example">
+              <label for="email">Nombre de Autor: </label>
+              <input type="text" name="autor" id="autor" required />
+            </div>
+            <div class="form-example">
+              <input type="submit" value="Subir" />
+            </div>
+          </form>
+          <!--FORMULARIO PRESTAMO-->
+          <form action="" method="post" class="form-book">
+            <div class="form">
+              <label for="name">ID_Libro </label>
+              <input type="text" name="prestamo" id="prestamo" required />
+            </div>
+            <div class="form-example">
+              <label for="email">ID_Usuario </label>
+              <input type="text" name="user_id" id="user_id" required />
+            </div>
+            <form action="" method="post" class="form-book">
+            <div class="form">
+              <label for="name">Fecha de Prestamo: </label>
+              <input type="text" name="fecha_pre" id="fecha_pre" required />
+            </div>
+            <div class="form-example">
+              <label for="email">Fecha de Devolucion </label>
+              <input type="text" name="fecha_dev" id="fecha_dev" required />
+            </div>
+            <div class="form-example">
+              <input type="submit" value="Subir" />
+            </div>
+          </form>
+          <!--FORMULARIO USER-->
+          <form action="" method="post" class="form-book">
+            <div class="form">
+              <label for="name">Nombre de Usuario: </label>
+              <input type="text" name="user" id="user" required />
+            </div>
+            <div class="form-example">
+              <label for="email">E-Mail de Usuario: </label>
+              <input type="email" name="mail" id="mail" required />
+            </div>
+            <div class="form-example">
+                <label for="email">Telefono de Usuario: </label>
+                <input type="number" name="number" id="number" required />
+              </div>
+            <div class="form-example">
+              <input type="submit" value="Subir" />
+            </div>
+          </form>
+    </main>
+</body>
+
+</html>
