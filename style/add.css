@@ -1,0 +1,16 @@
+input[maxlength="9"]+div {
+    display: none;
+}
+
+input[maxlength="9"]:valid {
+    background-color: #C4ECC7;
+}
+
+input[maxlength="9"]:invalid {
+    background-color: #EAC6C6;
+}
+
+input[maxlength="9"]:invalid+div {
+    display: block;
+    color: #C66464;
+}
