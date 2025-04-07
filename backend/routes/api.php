@@ -16,16 +16,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-    switch($solicitud){
+    switch ($solicitud) {
         case "agregar-usuario":
             $username = $_GET["username"];
             $email = $_GET["email"];
             $phoneNumber = $_GET["phoneNumber"];
             agregarUsuario($username, $email, $phoneNumber);
             break;
+        case "agregar-libro":
+            $name = $_GET["name"];
+            $author = $_GET["author"];
+            $publicationYear = $_GET["publicationYear"];
+            agregarLibro($name, $author, $publicationYear);
+            break;
+        case "agregar-prestamo":
+            $bookId = $_GET["bookId"];
+            $userId = $_GET["userId"];
+            $borrowDate = $_GET["borrowedDate"];
+            $returnDate = $_GET["returnedDate"];
+            agregarPrestamo($bookId, $userId, $borrowDate, $returnDate);
+            break;
         default:
-        echo json_encode(["error" => "Método no permitido"]);
-        break;
+            echo json_encode(["error" => "Método no permitido"]);
+            break;
     }
 } else {
     switch ($solicitud) {

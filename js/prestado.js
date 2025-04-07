@@ -12,12 +12,13 @@ async function obtenerPrestamos() {
 function mostrarPrestamos(prestamos) {
     let contenido = "";
     prestamos.forEach(prestamo => {
+        let returned = contenido.fecha_devolucion == null ? "No ha devuelto" : contenido.fecha_devolucion;
         contenido += "<tr>"
         contenido += "<td>" + prestamo.id_prestamo + "</td>";
         contenido += "<td>" + prestamo.id_libro + "</td>";
         contenido += "<td>" + prestamo.id_usuario + "</td>";
         contenido += "<td>" + prestamo.fecha_prestamo + "</td>";
-        contenido += "<td>" + prestamo.fecha_devolucion + "</td>";
+        contenido += "<td>" + returned + "</td>";
         contenido += "</tr>"
         console.log(prestamo);
     });

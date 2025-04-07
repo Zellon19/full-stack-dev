@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="./style/add.css">
   <!-- ^ Add page specific CSS -->
   <script src="./js/agregar.js"></script>
-
 </head>
 
 <body>
@@ -31,45 +30,50 @@
       <!--FORMULARIO LIBRO-->
       <form action="" method="post" class="form-book">
         <div class="form">
-          <label for="name">Nombre de Libro: </label>
-          <input type="text" name="libro" id="libro" required />
+          <label for="book_input_name">Nombre de Libro: </label>
+          <input type="text" name="book_input_name" id="book_name" required />
         </div>
         <div class="form-example">
-          <label for="email">Nombre de Autor: </label>
-          <input type="text" name="autor" id="autor" required />
+          <label for="book_input_author">Nombre de Autor: </label>
+          <input type="text" name="book_input_author" id="book_author" required />
         </div>
         <div class="form-example">
-          <input type="submit" value="Subir" />
+          <label for="book_input_pubdate">Año de publicacion: </label>
+          <input name="book_input_pubdate" id="book_pubdate" inputmode="numeric" min="1" max="9999" maxlength="4"
+            minlength="1" required />
+        </div>
+        <div class="form-example">
+          <input type="submit" value="Subir" onclick="addBook()" />
         </div>
       </form>
       <!--FORMULARIO PRESTAMO-->
       <form action="" method="post" class="form-book">
         <div class="form">
-          <label for="name">ID_Libro </label>
-          <input type="text" name="prestamo" id="prestamo" required />
+          <label for="borrow_input_bookid">ID_Libro </label>
+          <input type="text" name="borrow_input_bookid" id="borrow_bookid" required />
         </div>
         <div class="form-example">
-          <label for="email">ID_Usuario </label>
-          <input type="text" name="user_id" id="user_id" required />
+          <label for="borrow_input_userid">ID_Usuario </label>
+          <input type="text" name="borrow_input_userid" id="borrow_userid" required />
         </div>
         <form action="" method="post" class="form-book">
           <div class="form">
-            <label for="name">Fecha de Prestamo: </label>
-            <input type="text" name="fecha_pre" id="fecha_pre" required />
+            <label for="borrow_input_borrdate">Fecha de Prestamo: </label>
+            <input type="date" name="borrow_input_borrdate" id="borrow_borrowdate" required />
           </div>
           <div class="form-example">
-            <label for="email">Fecha de Devolucion </label>
-            <input type="text" name="fecha_dev" id="fecha_dev" required />
+            <label for="borrow_input_retdate">Fecha de Devolucion </label>
+            <input type="date" name="borrow_input_retdate" id="borrow_returndate" />
           </div>
           <div class="form-example">
-            <input type="submit" value="Subir" />
+            <input type="submit" value="Subir" onclick="addBorrow()" />
           </div>
         </form>
         <!--FORMULARIO USER-->
         <form action="" method="post" class="form-book">
           <div class="form">
-            <label for="user_input_id">Nombre de Usuario: </label>
-            <input type="text" name="user_input_id" id="user_username" required />
+            <label for="user_input_username">Nombre de Usuario: </label>
+            <input type="text" name="user_input_username" id="user_username" required />
           </div>
           <div class="form-example">
             <label for="user_input_email">E-Mail de Usuario: </label>
@@ -77,7 +81,8 @@
           </div>
           <div class="form-example">
             <label for="user_input_phone_number">Telefono de Usuario: </label>
-            <input name="user_input_phone_number" id="user_phone_number" inputmode="numeric" min="010000000" max="999999999" maxlength="9" minlength="9" required />
+            <input name="user_input_phone_number" id="user_phone_number" inputmode="numeric" min="010000000"
+              max="999999999" maxlength="9" minlength="9" required />
           </div>
           <div class="form-example">
             <input type="submit" value="Subir" onclick="addUser()" />
@@ -96,6 +101,7 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Titulo</th>
+            <th scope="col">Autor</th>
             <th scope="col">Disponible</th>
           </tr>
         </thead>
@@ -115,6 +121,22 @@
           </tr>
         </thead>
         <tbody id="body-table-users">
+
+        </tbody>
+      </table>
+
+      <!-- Tabla de Prestamos-->
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">ID Prestamo</th>
+            <th scope="col">ID Libro</th>
+            <th scope="col">ID Usuario</th>
+            <th scope="col">Fecha Prestamo</th>
+            <th scope="col">Fecha Devolucion</th>
+          </tr>
+        </thead>
+        <tbody id="body-table-borrow">
 
         </tbody>
       </table>
