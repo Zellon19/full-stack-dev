@@ -14,3 +14,11 @@ input[maxlength="9"]:invalid+div {
     display: block;
     color: #C66464;
 }
+
+.form-area {
+    display: flex;
+    padding: 10px;
+    gap: 100px;
+    justify-content: center;
+    background-color: darkgreen;
+}
