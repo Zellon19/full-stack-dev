@@ -21,7 +21,12 @@ table {
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
-  
+
+  /*Table Background Color*/
+tr {
+  background-color: #afafafde;
+}
+
   /* Table borders */
   table, th, td {
     border: 1px solid #ddd;
