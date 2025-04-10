@@ -18,22 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     switch ($solicitud) {
         case "agregar-usuario":
-            $username = $_POST["username"];
-            $email = $_POST["email"];
-            $phoneNumber = $_POST["phoneNumber"];
+            $username = $_GET["username"];
+            $email = $_GET["email"];
+            $phoneNumber = $_GET["phoneNumber"];
             agregarUsuario($username, $email, $phoneNumber);
             break;
         case "agregar-libro":
-            $name = $_POST["name"];
-            $author = $_POST["author"];
-            $publicationYear = $_POST["publicationYear"];
+            $name = $_GET["name"];
+            $author = $_GET["author"];
+            $publicationYear = $_GET["publicationYear"];
             agregarLibro($name, $author, $publicationYear);
             break;
         case "agregar-prestamo":
-            $bookId = $_POST["bookId"];
-            $userId = $_POST["userId"];
-            $borrowDate = $_POST["borrowedDate"];
-            $returnDate = $_POST["returnedDate"];
+            $bookId = $_GET["bookId"];
+            $userId = $_GET["userId"];
+            $borrowDate = $_GET["borrowedDate"];
+            $returnDate = $_GET["returnedDate"];
             agregarPrestamo($bookId, $userId, $borrowDate, $returnDate);
             break;
         default:
