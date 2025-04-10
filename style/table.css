@@ -33,8 +33,3 @@ table {
     border-radius: 5px;
   }
   
-  /* Hover effect for rows */
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
