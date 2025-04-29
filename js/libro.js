@@ -14,7 +14,7 @@ function mostrarLibros(libros) {
     const url = "../full-stack-dev/backend/routes/api.php"
     libros.forEach(libro => {
         let available = libro.disponible === 1 ? "Si" : "No";
-        contenido += "<tr>"
+        contenido += "<tr id='libro-" + libro.id_libro + "'>";
         contenido += "<td>" + libro.id_libro + "</td>";
         contenido += "<td>" + libro.titulo + "</td>";
         contenido += "<td>" + libro.autor + "</td>";
@@ -23,11 +23,12 @@ function mostrarLibros(libros) {
         contenido += "<td> <a href=" + url + "''> Eliminar </a> </td>";
         contenido += "</tr>"
         console.log(libro);
+        contenido += "<td><button class='btn-eliminar' onclick='eliminarLibro(" + libro.id_libro + ")'>Eliminar</button></td>";
+        contenido += "</tr>";
     });
 
     const table = document.getElementById("body-table");
     table.innerHTML = contenido;
-
 }
 
 obtenerLibros();

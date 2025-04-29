@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Minecraft';
+    background-image: url('../assets/Wallpaper/Biblioteca\ MC.jpeg');
 }
 
 @font-face {
@@ -10,12 +11,15 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #333;
-    padding: 15px 20px;
+    background: linear-gradient(90deg, #111, #222, #111);
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
 .logo {
     color: white;
     font-size: 20px;
@@ -26,20 +30,49 @@ body {
     list-style: none;
     padding: 0;
     display: flex;
+    gap: 30px;
 }
 
 .nav-links li {
-    margin: 0 10px;
+    position: relative;
 }
 
 .nav-links a {
-    color: white;
+    color: #eee;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00ffcc;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    color: #00ffcc;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a.active {
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
 }
 
 .gallery{
@@ -64,7 +97,7 @@ body {
 }
 
 .image-container:hover img {
-    opacity: 0.6s;
+    opacity: 0.6;
 }
 
 .overlay {
@@ -77,12 +110,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
 }
 
 .image-container:hover .overlay{
-    opacity: 1;
+    opacity: 0.2;
 }
 
 .overlay h3 {
@@ -94,3 +127,4 @@ body {
     display: flex;
     flex-direction: row;
 }
+
