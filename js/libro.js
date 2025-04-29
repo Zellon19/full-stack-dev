@@ -11,6 +11,7 @@ async function obtenerLibros() {
 
 function mostrarLibros(libros) {
     let contenido = "";
+    const url = "../full-stack-dev/backend/routes/api.php"
     libros.forEach(libro => {
         let available = libro.disponible === 1 ? "Si" : "No";
         contenido += "<tr>"
@@ -19,6 +20,7 @@ function mostrarLibros(libros) {
         contenido += "<td>" + libro.autor + "</td>";
         contenido += "<td>" + libro.anio_publicacion + "</td>";
         contenido += "<td>" + available + "</td>";
+        contenido += "<td> <a href=" + url + "''> Eliminar </a> </td>";
         contenido += "</tr>"
         console.log(libro);
     });
