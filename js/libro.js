@@ -11,7 +11,7 @@ async function obtenerLibros() {
 
 function mostrarLibros(libros) {
     let contenido = "";
-    const url = "../full-stack-dev/backend/routes/api.php"
+    const url = "../full-stack-dev/backend/routes/api.php?id=";
     libros.forEach(libro => {
         let available = libro.disponible === 1 ? "Si" : "No";
         contenido += "<tr id='libro-" + libro.id_libro + "'>";
@@ -20,11 +20,8 @@ function mostrarLibros(libros) {
         contenido += "<td>" + libro.autor + "</td>";
         contenido += "<td>" + libro.anio_publicacion + "</td>";
         contenido += "<td>" + available + "</td>";
-        contenido += "<td> <a href=" + url + "''> Eliminar </a> </td>";
+        contenido += "<td> <a href=" + url + libro.id_libro + "''> Eliminar </a> </td>";
         contenido += "</tr>"
-        console.log(libro);
-        contenido += "<td><button class='btn-eliminar' onclick='eliminarLibro(" + libro.id_libro + ")'>Eliminar</button></td>";
-        contenido += "</tr>";
     });
 
     const table = document.getElementById("body-table");

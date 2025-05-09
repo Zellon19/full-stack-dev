@@ -32,5 +32,11 @@ class Libro {
         // Los valores del libro se pasan en un array asociativo
         return $stmt->execute(["titulo" => $titulo, "autor" => $autor, "anio" => $anio_publicacion]);
     }
+
+    public function eliminar($idLibro) {
+        $stmt = $this->pdo->prepare("DELETE FROM libro WHERE id_libro = :id_libro");
+        return $stmt->execute(["id_libro" => $idLibro]);
+    }
+    
 }
 ?>

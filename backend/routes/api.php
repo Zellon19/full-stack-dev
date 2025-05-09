@@ -56,3 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             break;
     }
 }
+
+if ($_SERVER["REQUEST_METHOD"] === "DELETE") {
+    $id_libro = $_GET["id"] ?? null;
+
+    if ($id_libro) {
+        eliminarUsuario($id_libro);
+    } else {
+        echo json_encode(["success" => false, "message" => "Invalid book ID"]);
+    }
+}
+
